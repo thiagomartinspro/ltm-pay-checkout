@@ -1,6 +1,8 @@
 import React from 'react';
+import UrgencyTimer from './UrgencyTimer';
 
 const BrandingSettings = ({ config, setConfig }) => {
+
   const handleChange = (e) => {
     const { name, value } = e.target;
     setConfig(prev => ({ ...prev, [name]: value }));
@@ -96,8 +98,11 @@ const BrandingSettings = ({ config, setConfig }) => {
           </div>
         </div>
       </div>
+
+      <UrgencyTimer config={config} setConfig={setConfig} />
     </div>
   );
 };
+
 
 export default BrandingSettings;

@@ -11,6 +11,8 @@ import {
   Code 
 } from 'lucide-react';
 import BrandingSettings from '../components/checkout/BrandingSettings';
+import PreviewFrame from '../components/checkout/PreviewFrame';
+
 
 const TabButton = ({ active, onClick, icon: Icon, children }) => (
   <button 
@@ -123,22 +125,32 @@ const ProductEdit = () => {
 
         {/* Tab Content */}
         <div className="p-8 flex-1">
-          {activeTab === 'checkout' && (
-            <BrandingSettings config={config} setConfig={setConfig} />
-          )}
-          
-          {activeTab !== 'checkout' && (
-            <div className="flex flex-col items-center justify-center text-center h-full py-20 gap-4">
-              <div className="w-16 h-16 bg-white/5 rounded-full flex items-center justify-center text-text-muted">
-                <Settings size={32} />
-              </div>
-              <div>
-                <h3 className="text-lg font-bold text-text-header">Em desenvolvimento</h3>
-                <p className="text-sm text-text-muted max-w-sm">Esta aba está sendo preparada para oferecer as melhores funcionalidades para seu checkout.</p>
-              </div>
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12">
+            <div className="lg:col-span-7">
+              {activeTab === 'checkout' && (
+                <BrandingSettings config={config} setConfig={setConfig} />
+              )}
+              
+              {activeTab !== 'checkout' && (
+                <div className="flex flex-col items-center justify-center text-center h-full py-20 gap-4">
+                  <div className="w-16 h-16 bg-white/5 rounded-full flex items-center justify-center text-text-muted">
+                    <Settings size={32} />
+                  </div>
+                  <div>
+                    <h3 className="text-lg font-bold text-text-header">Em desenvolvimento</h3>
+                    <p className="text-sm text-text-muted max-w-sm">Esta aba está sendo preparada para oferecer as melhores funcionalidades para seu checkout.</p>
+                  </div>
+                </div>
+              )}
             </div>
-          )}
+
+            {/* Sidebar Preview */}
+            <div className="lg:col-span-5">
+              <PreviewFrame config={config} />
+            </div>
+          </div>
         </div>
+
       </div>
     </div>
   );
