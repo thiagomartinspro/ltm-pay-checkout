@@ -9,9 +9,13 @@ import {
   Users,
   DollarSign
 } from 'lucide-react';
+import { useNavigate } from 'react-router-dom';
 
-const ProductCard = ({ name, revenue, students, status }) => (
-  <div className="glass-card p-6 flex flex-col gap-6">
+const ProductCard = ({ name, revenue, students, status }) => {
+  const navigate = useNavigate();
+  return (
+    <div className="glass-card p-6 flex flex-col gap-6">
+
     <div className="flex justify-between items-start">
       <div className="w-12 h-12 bg-primary/10 rounded-2xl flex items-center justify-center text-primary border border-primary/20">
         <Package size={24} />
@@ -49,16 +53,21 @@ const ProductCard = ({ name, revenue, students, status }) => (
     </div>
 
     <div className="flex gap-2">
-      <button className="flex-1 bg-primary hover:bg-primary-hover text-white py-2.5 rounded-xl font-bold text-sm transition-all flex items-center justify-center gap-2">
+      <button 
+        onClick={() => navigate('/products/edit/1')}
+        className="flex-1 bg-primary hover:bg-primary-hover text-white py-2.5 rounded-xl font-bold text-sm transition-all flex items-center justify-center gap-2"
+      >
         <Edit size={16} />
         Editar
       </button>
+
       <button className="p-2.5 glass-card border-border hover:border-text-muted text-text-muted hover:text-text-main rounded-xl">
         <ExternalLink size={18} />
       </button>
     </div>
   </div>
-);
+  );
+};
 
 const Products = () => {
   const productList = [

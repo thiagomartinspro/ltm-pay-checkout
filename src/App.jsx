@@ -3,7 +3,9 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import AppLayout from './components/AppLayout';
 import Dashboard from './pages/Dashboard';
 import Products from './pages/Products';
+import ProductEdit from './pages/ProductEdit';
 import './index.css';
+
 
 function App() {
   return (
@@ -12,7 +14,9 @@ function App() {
         <Route path="/" element={<AppLayout />}>
           <Route index element={<Dashboard />} />
           <Route path="products" element={<Products />} />
+          <Route path="products/edit/:id" element={<ProductEdit />} />
           {/* Fallback routes */}
+
           <Route path="*" element={<div className="text-text-header font-bold p-10 font-outfit">Página em desenvolvimento...</div>} />
         </Route>
       </Routes>
