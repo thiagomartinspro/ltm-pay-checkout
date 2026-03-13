@@ -42,10 +42,11 @@ const AppLayout = () => {
           <SidebarLink to="/" icon={LayoutDashboard}>Dashboard</SidebarLink>
           <SidebarLink to="/products" icon={Package}>Produtos</SidebarLink>
           <SidebarLink to="/sales" icon={ShoppingCart}>Vendas</SidebarLink>
-          <SidebarLink to="/affiliates" icon={Users}>Afiliados</SidebarLink>
-          <SidebarLink to="/reports" icon={BarChart3}>Relatórios</SidebarLink>
+          <SidebarLink to="/integrations" icon={Settings}>Integrações</SidebarLink>
+          <SidebarLink to="/webhooks" icon={BarChart3}>Webhooks</SidebarLink>
           <SidebarLink to="/settings" icon={Settings}>Configurações</SidebarLink>
         </nav>
+
 
         <div className="p-4 border-t border-border">
           <button className="flex items-center gap-3 px-4 py-3 w-full text-text-muted hover:text-red-400 transition-colors">
